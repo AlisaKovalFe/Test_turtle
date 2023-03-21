@@ -3,7 +3,7 @@ const countDays = require('./index.js')
 test('Should return number of days', () => {
     expect(countDays(100, 50, 30)).toBe(4)
     expect(countDays(40, 25, 10)).toBe(2)
-    expect(countDays(5, 9, 2)).toBe('Черепашка залезет на холм меньше, чем за один сутки, а именно ' + 7 + ' часов приблизительно')
+    expect(countDays(5, 9, 2)).toBe('Черепашка залезет на холм меньше, чем за один сутки, а именно за ' + 7 + ' часов приблизительно')
     expect(countDays(0, 50, 30)).toBe('Черепашка отдохни, тебе никуда не нужно ползти')
     expect(countDays(120, 30, 30)).toBe('Черепашка никогда не сможет забраться на гору')
 })

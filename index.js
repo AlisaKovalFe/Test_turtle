@@ -17,7 +17,7 @@ const countDays = (wayLength, up, down) => {
 
     if (i > wayLength) {
         numberDays += Math.round((i - wayLength) / (up - down) * 100 / 100 * 24)
-        return 'Черепашка залезет на холм меньше, чем за один сутки, а именно ' + numberDays + ' часов приблизительно'
+        return 'Черепашка залезет на холм меньше, чем за один сутки, а именно за ' + numberDays + ' часов приблизительно'
     }
 }
 
