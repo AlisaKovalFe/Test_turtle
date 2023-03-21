@@ -1,0 +1,22 @@
+{
+  "name": "test_turtle",
+  "version": "1.0.0",
+  "description": "task_turtle  with test",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlisaKovalFe/Test_turtle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlisaKovalFe/Test_turtle/issues"
+  },
+  "homepage": "https://github.com/AlisaKovalFe/Test_turtle#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
