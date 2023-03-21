@@ -4,15 +4,22 @@ const countDays = (wayLength, up, down) => {
     let numberDays = 0
     let i
 
+    if (down >= up) return numberDays = 'Черепашка никогда не сможет забраться на гору'
+    if (wayLength == 0) return numberDays = 'Черепашка отдохни, тебе никуда не нужно ползти'
+
     for (i = up - down; i <= wayLength; i += up - down) {
         numberDays++
+        if (i + up >= wayLength) {
+            numberDays++
+            return numberDays
+        }
     }
 
-    if (i > wayLength && ((i - (up - down)) - wayLength != 0)) {
-        numberDays += Math.round((i - wayLength) / (up - down) * 100) / 100
+    if (i > wayLength) {
+        numberDays += Math.round((i - wayLength) / (up - down) * 100 / 100 * 24)
+        return 'Черепашка залезет на холм меньше, чем за один сутки, а именно ' + numberDays + ' часов приблизительно'
     }
-
-    return numberDays
 }
+
 
 module.exports = countDays

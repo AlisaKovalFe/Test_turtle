@@ -1,21 +1,19 @@
 const countDays = require('./index.js')
 
 test('Should return number of days', () => {
-    expect(countDays(100, 50, 30)).toBe(5)
-    expect(countDays(40, 25, 10)).toBe(2.33)
+    expect(countDays(100, 50, 30)).toBe(4)
+    expect(countDays(40, 25, 10)).toBe(2)
+    expect(countDays(5, 9, 2)).toBe('Черепашка залезет на холм меньше, чем за один сутки, а именно ' + 7 + ' часов приблизительно')
+    expect(countDays(0, 50, 30)).toBe('Черепашка отдохни, тебе никуда не нужно ползти')
+    expect(countDays(120, 30, 30)).toBe('Черепашка никогда не сможет забраться на гору')
 })
 
 test('Check if a result is defined', () => {
     expect(countDays(130, 50, 30)).not.toBeUndefined()
 })
 
-test('Check if the result truthy or falsy', () => {
+test('Check if the result truthy', () => {
     expect(countDays(130, 50, 30)).toBeTruthy()
-    expect(countDays(0, 50, 30)).toBeFalsy()
-})
-
-test('Should return the close floating-point arithmetic value', () => {
-    expect(countDays(40, 25, 10)).toBeCloseTo(2.333)
 })
 
 test('Check if the result is not NaN', () => {
@@ -23,8 +21,9 @@ test('Check if the result is not NaN', () => {
 })
 
 test('Check if the result is not a string', () => {
-    let regexp = /\w\w\w\w/
-    expect(countDays(100, 50, 30)).not.toBe(regexp)
+    let regexp = /ˆ[а-яА-ЯёЁa-zA-Z]+s$/
+    let result = countDays(120, 30, 30).match(regexp)
+    expect(countDays(100, 50, 30)).not.toBe(result)
 })
 
 test('Check if the result not to be null', () => {
